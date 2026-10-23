@@ -1,33 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SB Studio</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#03060c;color:white;font-family:Arial,sans-serif}header{padding:16px;display:flex;justify-content:space-between;border-bottom:1px solid #00cfff}a,button{color:white;cursor:pointer;text-decoration:none}a{margin:7px}button{background:#071a29;border:1px solid #00cfff;border-radius:8px;padding:11px}h1{font-size:55px;font-style:italic;color:#00cfff}h2{color:#ff168e}.wrap{max-width:1000px;margin:auto;padding:20px}.hero{text-align:center;padding:45px 10px;background:radial-gradient(circle,#12334d,#03060c 70%)}.logo{color:#00cfff;font-size:26px}.games,.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{padding:20px;text-align:center;background:#07111d;border:1px solid #00cfff;border-radius:12px}.card span{font-size:42px}.benefits{grid-template-columns:repeat(4,1fr)}.banner{text-align:center;padding:25px;margin:25px 0;border:1px solid #ff168e;border-radius:12px}footer{text-align:center;padding:20px;color:#9eb0c3}@media(max-width:600px){header{flex-wrap:wrap}.games{grid-template-columns:1fr}.benefits{grid-template-columns:repeat(2,1fr)}h1{font-size:43px}}
-</style>
-</head>
-<body>
-<header><a class="logo" href="#home">♛ SB STUDIO</a><nav><a href="#home">Home</a><a href="#games">Games</a><a href="#about">About</a></nav></header>
-<main id="home" class="wrap">
-<section class="hero"><h1>SB STUDIO</h1><h2>PLAY BEYOND LIMITS</h2><p>Explore games. Challenge yourself. Join the community.</p><a href="#games"><button>EXPLORE GAMES →</button></a></section>
-<section id="games"><h2>♛ FEATURED GAMES</h2><div class="games">
-<div class="card"><span>⚔️</span><h3>Battle Arena</h3><button onclick="play('Battle Arena')">PLAY NOW</button></div>
-<div class="card"><span>🕵️</span><h3>Mystery Mind</h3><button onclick="play('Mystery Mind')">PLAY NOW</button></div>
-<div class="card"><span>🏎️</span><h3>Next Dimension</h3><button onclick="play('Next Dimension')">PLAY NOW</button></div>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SB STUDIO</title><style>
+*{box-sizing:border-box}body{margin:0;background:#030711;color:white;font-family:Arial,sans-serif}header{position:sticky;top:0;background:#030711f5;border-bottom:1px solid #00d5ff;padding:15px;display:flex;justify-content:space-between;align-items:center;z-index:5}.logo{font-size:24px;font-weight:900;font-style:italic;color:#ff168f}.logo b{color:#00d5ff}nav a{color:white;text-decoration:none;margin:0 8px;font-size:13px}.wrap{width:min(1000px,94%);margin:auto}.hero{padding:45px 20px;background:radial-gradient(ellipse at 80% 40%,#123c68,transparent 55%),linear-gradient(120deg,#030711,#160921);min-height:350px}.hero h1{font-size:clamp(55px,10vw,100px);line-height:.85;margin:15px 0;font-style:italic}.cyan{color:#00d5ff}.pink{color:#ff168f}p{color:#c5d2e3;line-height:1.5}.btn,button{display:inline-block;border:1px solid #00d5ff;border-radius:25px;background:#061725;color:white;padding:12px 18px;font-weight:bold;cursor:pointer;text-decoration:none;margin:5px}.hot{border-color:#ff168f;background:#26081d}.stats,.games,.benefits{display:grid;gap:12px}.stats{grid-template-columns:repeat(4,1fr);padding:15px 0;border:1px solid #16445a;border-radius:12px;margin-top:15px}.stat{text-align:center;border-right:1px solid #183247}.stat:last-child{border:0}.stat b{display:block;font-size:23px;color:#00d5ff}.section{padding-top:28px}.heading{font-size:clamp(23px,4vw,34px);font-style:italic;margin:0 0 15px}.games{grid-template-columns:repeat(3,1fr)}.card{border:1px solid #00d5ff;border-radius:12px;overflow:hidden;background:#07111e;text-align:center}.card:nth-child(2){border-color:#ff168f}.art{height:145px;display:grid;place-items:center;font-size:65px;background:radial-gradient(circle,#16486b,#07111e 70%)}.card:nth-child(2) .art{background:radial-gradient(circle,#5a1747,#07111e 70%)}.card:nth-child(3) .art{background:radial-gradient(circle,#34205c,#07111e 70%)}.card h3{font-size:16px}.card p{font-size:13px}.play{background:#00d5ff;color:#03101a;border:0}.card:nth-child(2) .play{background:#ff168f;color:white}.apps{margin-top:25px;padding:22px;border:1px solid #ff168f;border-radius:12px;background:linear-gradient(110deg,#07111e,#21102b)}.appitems{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.appitems div{background:#071725;border:1px solid #183d52;border-radius:9px;padding:15px 4px;text-align:center}.appitems b{display:block;font-size:25px;color:#00d5ff}.join{margin-top:22px;padding:25px;border:1px solid #00d5ff;border-radius:12px;background:linear-gradient(100deg,#092343,#210a28);display:flex;justify-content:space-between;align-items:center;gap:10px}.benefits{grid-template-columns:repeat(4,1fr);margin-bottom:35px}.benefit{text-align:center;border:1px solid #16445a;border-radius:10px;padding:18px 5px;background:#07111e}.benefit b{font-size:28px;color:#00d5ff}.benefit:nth-child(even){border-color:#ff168f}.benefit:nth-child(even) b{color:#ff168f}footer{text-align:center;padding:20px;border-top:1px solid #16445a;color:#b7c4d7}.menu{display:none}@media(max-width:650px){nav a{margin:0 3px;font-size:11px}.logo{font-size:18px}.hero{padding:35px 10px}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border:0}.stat:nth-child(-n+2){padding-bottom:12px}.games{grid-template-columns:1fr}.art{height:180px}.benefits{grid-template-columns:repeat(2,1fr)}.join{flex-wrap:wrap}.appitems div{font-size:12px;padding:10px 2px}}
+</style></head><body>
+<header><a class="logo" href="#home" style="text-decoration:none">♛ <b>SB</b> STUDIO</a><nav><a href="#home">⌂ Home</a><a href="#games">🎮 Games</a><a href="#apps">▦ Apps</a><a href="#about">About</a></nav></header>
+<main id="home"><section class="hero"><div class="wrap"><h1><span class="cyan">SB</span><br><span class="pink">STUDIO</span></h1><h3>PLAY BEYOND LIMITS</h3><p>Explore amazing games and useful apps — all in one place.</p><a class="btn" href="#games">🎮 EXPLORE GAMES →</a><a class="btn hot" href="#apps">▦ VIEW APPS →</a></div></section>
+<div class="wrap"><div class="stats"><div class="stat">🎮<b>10+</b>Games</div><div class="stat">▦<b>15+</b>Apps</div><div class="stat">♛<b>AI</b>Tools</div><div class="stat">♟<b>1K+</b>Users</div></div>
+<section class="section" id="games"><h2 class="heading">🎮 <span class="cyan">FEATURED</span> <span class="pink">GAMES</span></h2><div class="games">
+<div class="card"><div class="art">⚔️</div><h3>BATTLE ARENA</h3><p>3D Action Game</p><button class="play" onclick="notify('Battle Arena demo coming soon!')">PLAY NOW →</button></div>
+<div class="card"><div class="art">🕵️</div><h3>MYSTERY MIND</h3><p>Puzzle Adventure</p><button class="play" onclick="location.href='#about'">PLAY NOW →</button></div>
+<div class="card"><div class="art">🏎️</div><h3>NEXT DIMENSION</h3><p>Racing Game</p><button class="play" onclick="notify('Racing demo coming soon!')">PLAY NOW →</button></div>
 </div></section>
-<section class="banner"><h2>JOIN SB STUDIO</h2><p>Be part of our gaming community.</p><button onclick="share()">JOIN / SHARE ↗</button></section>
-<section id="about"><h2>♛ WHAT YOU GET</h2><div class="benefits">
-<div class="card">🎮<p>Games</p></div><div class="card">〈/〉<p>Projects</p></div><div class="card">♟<p>Community</p></div><div class="card">⚡<p>Updates</p></div>
-</div></section>
-</main>
-<footer>♛ SB STUDIO · PLAY BEYOND LIMITS</footer>
+<section class="apps" id="apps"><h2 class="heading"><span class="pink">▦ APPS STUDIO</span></h2><p>Useful Apps for Everyone</p><div class="appitems"><div><b>⚒</b>Tools</div><div><b>▧</b>Photo</div><div><b>▶</b>Media</div><div><b>⚙</b>Utilities</div></div><button class="hot" onclick="notify('Apps Studio coming soon!')">EXPLORE APPS →</button></section>
+<section class="join"><div><h2><span class="cyan">JOIN</span> <span class="pink">SB STUDIO</span></h2><p>Be Part of Our Gaming Community</p></div><button class="hot" onclick="shareSite()">JOIN NOW →</button></section>
+<section class="section" id="about"><h2 class="heading">★ <span class="cyan">WHAT</span> <span class="pink">YOU GET</span></h2><div class="benefits"><div class="benefit"><b>🎮</b><h3>Amazing Games</h3><p>Play and enjoy</p></div><div class="benefit"><b>〈/〉</b><h3>Useful Apps</h3><p>Boost productivity</p></div><div class="benefit"><b>⚡</b><h3>Fresh Updates</h3><p>Smart and creative</p></div><div class="benefit"><b>♟</b><h3>Growing Community</h3><p>Be part of something big</p></div></div></section></div></main>
+<footer>♛ SB STUDIO · PLAY BEYOND LIMITS · © <span id="year"></span></footer>
 <script>
-function sound(){try{let c=new(window.AudioContext||window.webkitAudioContext),o=c.createOscillator(),g=c.createGain();o.frequency.value=650;g.gain.value=.04;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.07);o.onended=()=>c.close()}catch(e){}}
-document.addEventListener('click',e=>{if(e.target.closest('button,a'))sound()});
-function play(g){alert(g+' selected! Game demo coming soon.')}
-function share(){if(navigator.share)navigator.share({title:'SB Studio',url:location.href});else alert(location.href)}
-</script>
-</body>
-</html>
+function sound(){try{let c=new(window.AudioContext||window.webkitAudioContext),o=c.createOscillator(),g=c.createGain();o.frequency.value=650;g.gain.value=.035;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.07);o.onended=()=>c.close()}catch(e){}}
+document.addEventListener('click',e=>{if(e.target.closest('a,button'))sound()});document.getElementById('year').textContent=new Date().getFullYear();
+function notify(t){alert(t)}function shareSite(){if(navigator.share)navigator.share({title:'SB Studio',url:location.href});else alert(location.href)}
+</script></body></html>
