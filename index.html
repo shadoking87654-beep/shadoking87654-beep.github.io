@@ -1,49 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SB Studio | Games & Apps</title>
+<meta name="theme-color" content="#0A0A0A">
+<meta name="description" content="SB Studio — Games, Apps and AI Lab">
+<title>SB STUDIO | Play Beyond Limits</title>
 <style>
+:root {
+  --black:#0A0A0A;
+  --blue:#007BA7;
+  --rose:#FF2D95;
+  --white:#F8F8FC;
+  --muted:#A7A9B7;
+}
 *{box-sizing:border-box}
-body{margin:0;background:#080d19;color:#f5f7ff;font-family:Arial,sans-serif}
-header{padding:22px 18px;border-bottom:1px solid #27314a;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:bold;color:#8eaaff}
-nav a{color:white;text-decoration:none;margin-left:12px;font-size:13px}
-.hero{text-align:center;padding:75px 18px 55px;background:radial-gradient(ellipse at top,#263a70,#080d19 70%)}
-.hero h1{font-size:42px;margin:0 0 16px}
-.hero h1 span{color:#8eaaff}
-.hero p{color:#b8c2dc;line-height:1.7}
-.btn{display:inline-block;background:#6485ff;color:white;padding:13px 22px;border-radius:10px;text-decoration:none;margin-top:14px}
-section{padding:30px 18px;max-width:1000px;margin:auto}
-h2{font-size:26px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.card{padding:23px;background:#121a2c;border:1px solid #293653;border-radius:16px}
-.card p{color:#b8c2dc;line-height:1.6}
-.tag{color:#91aaff;font-size:13px}
-footer{text-align:center;padding:28px;color:#9ba8c5;border-top:1px solid #27314a}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,90%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#0a0a0aee;border-bottom:1px solid #ffffff20;backdrop-filter:blur(12px)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:1000;letter-spacing:3px;font-size:18px}
+.brand span{color:var(--rose)}
+nav{display:flex;gap:24px;font-size:12px;font-weight:bold;text-transform:uppercase}
+nav a:hover{color:var(--rose)}
+.hero{min-height:610px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 45%,#007ba74d,transparent 35%),radial-gradient(ellipse at 78% 75%,#ff2d9533,transparent 30%),#0A0A0A}
+.hero:after{content:"";position:absolute;right:-100px;top:70px;width:390px;height:390px;border:1px solid #007ba788;border-radius:50%;box-shadow:0 0 80px #007ba733,inset 0 0 80px #ff2d9520}
+.hero-content{position:relative;z-index:1;padding:85px 0;max-width:720px}
+.tag{font-size:11px;letter-spacing:4px;color:#64d9ff;font-weight:bold;text-transform:uppercase}
+h1{font-size:clamp(52px,10vw,100px);line-height:.9;letter-spacing:-5px;margin:25px 0;text-transform:uppercase}
+h1 span{color:var(--blue);text-shadow:0 0 35px #007ba766}
+h1 em{color:var(--rose);font-style:normal}
+.lead{max-width:530px;color:var(--muted);line-height:1.8;font-size:16px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:15px 20px;font-weight:bold;font-size:11px;letter-spacing:1px;text-transform:uppercase;border-radius:4px}
+.primary{background:var(--blue);box-shadow:0 0 25px #007ba744}
+.secondary{border:1px solid #ffffff55}
+section{padding:78px 0}
+.kicker{font-size:11px;letter-spacing:3px;color:var(--rose);font-weight:bold;text-transform:uppercase}
+h2{font-size:clamp(32px,5vw,52px);letter-spacing:-2px;text-transform:uppercase;margin:12px 0}
+.intro{color:var(--muted);max-width:540px;line-height:1.8}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:32px}
+.card{min-height:300px;border:1px solid #ffffff20;border-radius:9px;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:linear-gradient(145deg,#131923,#111116 65%,#21101c);transition:.25s}
+.card:nth-child(2){background:radial-gradient(ellipse at 80% 10%,#007ba766,transparent 55%),#111116}
+.card:nth-child(3){background:radial-gradient(ellipse at 80% 10%,#ff2d9555,transparent 55%),#111116}
+.card:hover{transform:translateY(-6px);border-color:var(--blue)}
+.card .number{position:absolute;top:20px;left:24px;color:#ffffff70;font-size:12px;letter-spacing:2px}
+.symbol{font-size:38px;margin-bottom:16px}
+.card h3{font-size:25px;text-transform:uppercase;margin:0 0 10px}
+.card p{color:var(--muted);line-height:1.7;font-size:13px;margin:0 0 18px}
+.status{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#64d9ff}
+.apps{background:#0e0e12;border-top:1px solid #ffffff10;border-bottom:1px solid #ffffff10}
+.banner{border:1px solid #ff2d9555;border-radius:10px;padding:35px;background:linear-gradient(110deg,#007ba722,#ff2d951c);display:flex;align-items:center;justify-content:space-between;gap:25px}
+.banner p{color:var(--muted);line-height:1.7;max-width:580px}
+footer{border-top:1px solid #ffffff20;padding:28px 0;color:#9294a0;font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+footer strong{color:white;letter-spacing:2px}
+@media(max-width:700px){
+ .nav{height:65px}.brand{font-size:14px;letter-spacing:2px}
+ nav{gap:12px}nav a{font-size:10px}nav a:nth-child(3){display:none}
+ .hero{min-height:570px}.hero:after{right:-230px;top:120px;width:340px;height:340px}
+ h1{letter-spacing:-3px}.lead{font-size:14px}
+ section{padding:58px 0}.cards{grid-template-columns:1fr}
+ .card{min-height:245px}.banner{flex-direction:column;align-items:flex-start;padding:25px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none}}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">⚡ SB STUDIO</div>
-<nav><a href="#games">Games</a><a href="#apps">Apps</a></nav>
+ <div class="wrap nav">
+  <a class="brand" href="#home">SB <span>STUDIO</span></a>
+  <nav><a href="#games">Games</a><a href="#apps">Apps</a><a href="#ai">AI Lab</a></nav>
+ </div>
 </header>
-<div class="hero">
-<p>WELCOME TO MY DIGITAL WORLD</p>
-<h1>Create. Play. <span>Innovate.</span></h1>
-<p>Original games, useful apps and creative AI projects.<br>All your creations, in one place.</p>
-<a class="btn" href="#projects">Explore Studio →</a>
-</div>
-<section id="projects">
-<h2>🚀 My Projects</h2>
-<div class="cards">
-<div class="card" id="games"><div class="tag">GAME STUDIO</div><h3>🎮 Games</h3><p>Original browser games and gaming projects.</p><span class="tag">Projects coming soon</span></div>
-<div class="card" id="apps"><div class="tag">APP STUDIO</div><h3>📱 Apps</h3><p>Useful mobile apps and digital tools.</p><span class="tag">Projects coming soon</span></div>
-<div class="card"><div class="tag">AI LAB</div><h3>✨ AI Tools</h3><p>Creative experiments and AI-powered projects.</p><span class="tag">Projects coming soon</span></div>
-</div>
+<main>
+<section class="hero" id="home">
+ <div class="wrap hero-content">
+  <div class="tag">Independent Digital Studio</div>
+  <h1>PLAY<br>BEYOND<br><span>LIMITS</span><em>.</em></h1>
+  <p class="lead">Welcome to SB Studio — a home for ambitious games, powerful apps and creative AI experiments. The next level starts with an idea.</p>
+  <div class="buttons"><a class="btn primary" href="#games">Explore Games ↗</a><a class="btn secondary" href="#projects">Discover Studio ↓</a></div>
+ </div>
 </section>
-<footer>© 2026 SB Studio · Built with creativity.</footer>
+<section id="games">
+ <div class="wrap">
+  <div class="kicker">01 / Game Division</div>
+  <h2>Enter the arena.</h2>
+  <p class="intro">Original gaming concepts and interactive experiences. This is where the SB Studio game universe begins.</p>
+  <div class="cards">
+   <article class="card"><div class="number">PROJECT / 001</div><div class="symbol">🎮</div><h3>Next Level</h3><p>A bold gaming concept built around challenge, action and discovery.</p><span class="status">In development</span></article>
+   <article class="card"><div class="number">PROJECT / 002</div><div class="symbol">⚡</div><h3>Quick Play</h3><p>Fast, fun browser-game experiments made for quick sessions.</p><span class="status">Coming soon</span></article>
+   <article class="card"><div class="number">PROJECT / 003</div><div class="symbol">🌌</div><h3>Unknown Worlds</h3><p>Experimental worlds where imagination meets technology.</p><span class="status">Concept stage</span></article>
+  </div>
+ </div>
+</section>
+<section class="apps" id="projects">
+ <div class="wrap">
+  <div class="kicker">02 / Digital Products</div>
+  <h2>Build. Create. Evolve.</h2>
+  <div class="cards">
+   <article class="card" id="apps"><div class="number">PRODUCT / 001</div><div class="symbol">▣</div><h3>Apps Studio</h3><p>Useful mobile apps, productivity tools and digital experiences designed with purpose.</p><span class="status">Building the future</span></article>
+   <article class="card" id="ai"><div class="number">RESEARCH / 002</div><div class="symbol">✳</div><h3>AI Lab</h3><p>Creative AI prototypes and smart workflows for the next generation of creators.</p><span class="status">Experiments in progress</span></article>
+   <article class="card"><div class="number">COMMUNITY / 003</div><div class="symbol">↗</div><h3>Coming Next</h3><p>New projects will appear here as they are built and ready to share.</p><span class="status">Stay tuned</span></article>
+  </div>
+ </div>
+</section>
+<section>
+ <div class="wrap banner">
+  <div><div class="kicker">Your next level starts here</div><h2>Ideas become worlds.</h2><p>SB Studio is growing one project at a time. Explore our games, apps and experiments as new creations launch.</p></div>
+  <a class="btn primary" href="#home">Back to top ↑</a>
+ </div>
+</section>
+</main>
+<footer><div class="wrap footer-inner"><span><strong>SB STUDIO</strong> · GAMES / APPS / AI</span><span>© 2026 SB Studio. Built with creativity.</span></div></footer>
 </body>
-</html>
+                                                                                           </html>
+                                                                                           
